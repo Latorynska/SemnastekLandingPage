@@ -6,30 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
     <style>
-        html{
+        html {
             scroll-behavior: smooth;
         }
+
         html,
         body {
             height: 100%;
             margin: 0;
             overflow: hidden;
         }
-    
+
         main {
             height: 100%;
             display: flex;
             flex-direction: column;
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
-    
+
         main::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
+            display: none;
         }
-    
+
         section {
             height: 100vh;
             scroll-snap-align: start;
@@ -39,17 +40,16 @@
             padding: 20px;
             box-sizing: border-box;
         }
-    
-        /* Media Query untuk menonaktifkan scroll snap pada layar lebih kecil dari 1024px */
+
         @media (max-width: 1024px) {
             main {
-                scroll-snap-type: none; /* Menonaktifkan scroll-snap pada layar lebih kecil dari 1024px */
+                scroll-snap-type: none;
             }
-    
+
             section {
                 height: auto;
             }
-    
+
             .flex-col {
                 flex-direction: column;
                 align-items: center;
@@ -93,7 +93,7 @@
                 class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block"
                 aria-labelledby="hs-navbar-example-collapse">
                 <div class="flex flex-col gap-5 mt-5 lg:flex-row lg:items-center lg:justify-end lg:mt-0 lg:ps-5">
-                    <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-gray-200 font-semibold dark:hover:text-neutral-500 dark:focus:text-neutral-500" 
+                    <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-gray-200 font-semibold dark:hover:text-neutral-500 dark:focus:text-neutral-500"
                         href="#tentang">Tentang</a>
                     <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-gray-200 font-semibold dark:hover:text-neutral-500 dark:focus:text-neutral-500"
                         href="#lingkup">Lingkup</a>
@@ -148,22 +148,27 @@
     <main>
         <!-- Hero -->
         <section class="bg-white dark:bg-gray-900" id="hero">
-            <div class="grid max-w-screen-xl min-h-screen lg:min-h-screen max-h-screen px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 p-0">
-                
+            <div
+                class="grid max-w-screen-xl min-h-screen lg:min-h-screen max-h-screen px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 p-0">
+
                 <!-- Image -->
-                <div class="flex lg:hidden items-center lg:items-center justify-center lg:justify-center lg:col-span-5 max-h-fit">
+                <div
+                    class="flex lg:hidden items-center lg:items-center justify-center lg:justify-center lg:col-span-5 max-h-fit">
                     <img src="../assets/images/logo.png" alt="mockup" class="w-full max-w-md h-max lg:h-full">
                 </div>
 
                 <!-- Text Content -->
                 <div class="mr-auto place-self-center lg:col-span-7">
-                    <h1 class="max-w-2xl mb-4 text-xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl dark:text-white">
+                    <h1
+                        class="max-w-2xl mb-4 text-xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl dark:text-white">
                         SEMINAR NASIONAL TEKNIK UNIVERSITAS SURYAKANCANA (SEMNASTEK-UNSUR)
                     </h1>
-                    <p class="max-w-2xl mb-1 font-semibold text-gray-500 lg:mb-1 md:text-md lg:text-lg dark:text-gray-200">
+                    <p
+                        class="max-w-2xl mb-1 font-semibold text-gray-500 lg:mb-1 md:text-md lg:text-lg dark:text-gray-200">
                         20 Juni 2023
                     </p>
-                    <p class="max-w-2xl mb-1 font-semibold text-gray-500 lg:mb-2 md:text-md lg:text-lg dark:text-gray-200">
+                    <p
+                        class="max-w-2xl mb-1 font-semibold text-gray-500 lg:mb-2 md:text-md lg:text-lg dark:text-gray-200">
                         09.00 - Selesai.
                     </p>
                     <p class="max-w-2xl mb-1 font-bold text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-100">
@@ -172,11 +177,13 @@
                     <a href="#"
                         class="relative inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Daftar Sekarang
-                        <span class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
-                        <span class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                        <span
+                            class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                        <span
+                            class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
                     </a>
                 </div>
-        
+
                 <!-- Image -->
                 <div class="hidden lg:flex lg:items-center lg:justify-center lg:col-span-5">
                     <img src="../assets/images/logo.png" alt="mockup" class="w-full max-w-md">
@@ -186,35 +193,47 @@
         <!-- Tentang -->
         <section class="bg-slate-200 dark:bg-gray-700" id="tentang">
             <div class="flex flex-col min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
-                <div class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 mt-6 px-2">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     SEMNASTEK-UNSUR
                 </div>
                 <div class="text-sm md:text-md lg:text-lg font-medium text-black dark:text-white text-justify mt-8">
-                    Seminar Nasional Teknik merupakan program tahunan dari Fakultas Teknik, 
-                    Universitas Suryakancana yang ditujukan untuk mengumpulkan para akademisi, 
-                    peneliti, maupun praktisi dalam forum ilmiah yang akan mempresentasikan hasil penelitian dalam bentuk seminar. 
-                    Acara ini menggabungkan tiga bidang berbeda yaitu Industri, Sipil, dan Informatika yang menghasilkan lingkup 
-                    yang semakin luas dan akan menghasilkan banyak manfaat bagi mahasiswa, akademisi, peneliti dan masyarakat luas. 
-                    Seminar Nasional Teknik, Universitas Suryakancana (SEMNASTEK-UNSUR) kali ini mengangkat tema tentang 
-                    bagaimana<b> "Pemanfaatan teknologi Kecerdasan Buatan untuk meningkatkan indeks inovasi daerah" </b> bertujuan untuk mempertemukan para ilmuan akademik, 
-                    dan peneliti dalam berbagi hasil penelitian dan pengalaman terkait bagaimana menerapkan dan mengintegrasikan berbagai 
-                    teknologi untuk kebutuhan masyarakat yang nantinya secara tidak langsung akan meningkatkan IPM di suatu wilayah. 
-                    SEMNASTEK-UNSUR juga dapat berperan sebagai tempat para akademisi, peneliti, dan praktisi dalam mempresentasikan dan 
-                    mendiskusikan topik tentang tren, inovasi, kemungkinan perkembangan teknologi di masa depan, serta tantangan yang 
+                    Seminar Nasional Teknik merupakan program tahunan dari Fakultas Teknik,
+                    Universitas Suryakancana yang ditujukan untuk mengumpulkan para akademisi,
+                    peneliti, maupun praktisi dalam forum ilmiah yang akan mempresentasikan hasil penelitian dalam
+                    bentuk seminar.
+                    Acara ini menggabungkan tiga bidang berbeda yaitu Industri, Sipil, dan Informatika yang menghasilkan
+                    lingkup
+                    yang semakin luas dan akan menghasilkan banyak manfaat bagi mahasiswa, akademisi, peneliti dan
+                    masyarakat luas.
+                    Seminar Nasional Teknik, Universitas Suryakancana (SEMNASTEK-UNSUR) kali ini mengangkat tema tentang
+                    bagaimana<b> "Pemanfaatan teknologi Kecerdasan Buatan untuk meningkatkan indeks inovasi daerah" </b>
+                    bertujuan untuk mempertemukan para ilmuan akademik,
+                    dan peneliti dalam berbagi hasil penelitian dan pengalaman terkait bagaimana menerapkan dan
+                    mengintegrasikan berbagai
+                    teknologi untuk kebutuhan masyarakat yang nantinya secara tidak langsung akan meningkatkan IPM di
+                    suatu wilayah.
+                    SEMNASTEK-UNSUR juga dapat berperan sebagai tempat para akademisi, peneliti, dan praktisi dalam
+                    mempresentasikan dan
+                    mendiskusikan topik tentang tren, inovasi, kemungkinan perkembangan teknologi di masa depan, serta
+                    tantangan yang
                     dihadapi dan solusi yang solutif yang dapat berperan untuk peningkatan IPM.
                 </div>
-                
+
             </div>
         </section>
         <!-- Lingkup -->
         <section class="bg-white dark:bg-gray-900" id="lingkup">
-            <div class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
-                <div class="max-w-2xl text-lg font-bold tracking-tight leading-none md:text-2xl xl:text-4xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 mt-6 px-2">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
+                <div
+                    class="max-w-2xl text-lg font-bold tracking-tight leading-none md:text-2xl xl:text-4xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     Lingkup
                 </div>
                 <div class="flex flex-col lg:flex-row pt-6 gap-16">
                     <!-- Card -->
-                    <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div
+                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Informatika
                         </div>
@@ -232,11 +251,14 @@
                             <p>Human Computer Interaction</p>
                         </div>
                         <!-- Border Sudut -->
-                        <span class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
-                        <span class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                        <span
+                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span
+                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
                     </div>
                     <!-- Card -->
-                    <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div
+                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Industri
                         </div>
@@ -248,11 +270,14 @@
                             <p>Supply Chain and Logistics</p>
                         </div>
                         <!-- Border Sudut -->
-                        <span class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
-                        <span class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                        <span
+                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span
+                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
                     </div>
                     <!-- Card -->
-                    <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div
+                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Sipil
                         </div>
@@ -263,18 +288,22 @@
                             <p>Traffic engineering</p>
                         </div>
                         <!-- Border Sudut -->
-                        <span class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
-                        <span class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                        <span
+                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span
+                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
                     </div>
 
                 </div>
-                
+
             </div>
         </section>
         <!-- Narasumber -->
         <section class="bg-slate-200 dark:bg-gray-700" id="narasumber">
-            <div class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
-                <div class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 mt-6 px-2">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     Narasumber
                 </div>
                 <div class="mt-8 flex flex-col lg:flex-row gap-16">
@@ -288,11 +317,9 @@
                                     <div class="w-52 h-52 rounded-full ring-4 ring-slate-600"></div>
                                 </div>
                                 <!-- Image -->
-                                <img
-                                    class="w-48 h-48 rounded-full mx-auto relative z-10"
+                                <img class="w-48 h-48 rounded-full mx-auto relative z-10"
                                     src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                    alt="John Doe"
-                                >
+                                    alt="John Doe">
                             </div>
                             <div class="p-2">
                                 <h3 class="text-center text-2xl text-gray-900 font-bold leading-8">John Doe</h3>
@@ -312,11 +339,9 @@
                                     <div class="w-52 h-52 rounded-full ring-4 ring-slate-600"></div>
                                 </div>
                                 <!-- Image -->
-                                <img
-                                    class="w-48 h-48 rounded-full mx-auto relative z-10"
+                                <img class="w-48 h-48 rounded-full mx-auto relative z-10"
                                     src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                    alt="John Doe"
-                                >
+                                    alt="John Doe">
                             </div>
                             <div class="p-2">
                                 <h3 class="text-center text-2xl text-gray-900 font-bold leading-8">John Doe</h3>
@@ -336,11 +361,9 @@
                                     <div class="w-52 h-52 rounded-full ring-4 ring-slate-600"></div>
                                 </div>
                                 <!-- Image -->
-                                <img
-                                    class="w-48 h-48 rounded-full mx-auto relative z-10"
+                                <img class="w-48 h-48 rounded-full mx-auto relative z-10"
                                     src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                    alt="John Doe"
-                                >
+                                    alt="John Doe">
                             </div>
                             <div class="p-2">
                                 <h3 class="text-center text-2xl text-gray-900 font-bold leading-8">John Doe</h3>
@@ -351,29 +374,32 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- Tanggal Penting -->
         <section class="bg-white dark:bg-gray-900" id="tanggal-penting">
-            <div class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
-                <div class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 mt-6 px-2">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     Tanggal Penting
                 </div>
-                <div class="mt-8 flex flex-col lg:flex-row gap-16">
+                <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
                     <!-- steps -->
                     <ol class="space-y-8">
-                        <li class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center">
-                                <div class="flex items-center gap-3.5 bg-slate-200 p-3.5 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
-                                    <div class="relative flex items-center justify-center m-2 p-1">
-                                        <span class="text-lg text-black text-center font-semibold">
+                        <li
+                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex">
+                                <div
+                                    class="flex gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold line-through">
                                             31 <br>
                                             Maret
                                         </span>
                                     </div>
-                                    <div
-                                        class="flex items-start justify-center flex-col ">
+                                    <div class="flex justify-center flex-col line-through" style="align-items: start;">
                                         <h6 class="text-base font-semibold text-black mb-0.5">
                                             Deadline Submission
                                         </h6>
@@ -382,144 +408,560 @@
                                         </p>
                                     </div>
                                 </div>
-                            <div>
-                            <!-- Border Sudut -->
-                            <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span>
+                                <div>
+                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
                         </li>
-                        <li class="relative flex-1 after:content-['']  after:w-0.5 after:h-full  after:bg-gray-300 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                        <div class="flex items-center justify-center gap-8 w-full max-w-sm">
-                        <div class="flex items-center gap-3.5 bg-gray-50 p-3.5 rounded-xl relative z-10 border border-gray-50 w-full">
-                        <div class="rounded-lg bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-600 p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
-                                        stroke="currentColor" stroke-width="1.6"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class=" flex items-start rounded-md justify-center flex-col">
-                            <h6 class="text-base font-semibold text-black mb-0.5">
-                                Account
-                                Info</h6>
-                            <p class="text-xs font-normal text-gray-500">Anything
-                                you want for your credentials
-                            </p>
-                        </div>
-                        </div>
-                        </div>
+                        <li
+                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center">
+                                <div
+                                    class="flex items-center gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold line-through">
+                                            30 <br>
+                                            April
+                                        </span>
+                                    </div>
+                                    <div class="flex items-start justify-center flex-col line-through"
+                                        style="align-items: start;">
+                                        <h6 class="text-base font-semibold text-black mb-0.5">
+                                            Extended Deadline Submission
+                                        </h6>
+                                        <p class="text-sm font-normal text-gray-800">
+                                            Penambahan batas akhir pengiriman artikel.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
                         </li>
-                        <li class="relative flex-1 after:content-['']  after:w-0.5 after:h-full  after:bg-gray-300 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                        <div class="flex items-center justify-center gap-8 w-full max-w-sm">
-                        <div class="flex items-center gap-3.5 bg-gray-50 p-3.5 rounded-xl relative z-10 border border-gray-50 w-full">
-                        <div class="rounded-lg bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-600 p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
-                                        stroke="currentColor" stroke-width="1.6"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class=" flex items-start rounded-md justify-center flex-col">
-                            <h6 class="text-base font-semibold text-black mb-0.5">
-                                Account
-                                Info</h6>
-                            <p class="text-xs font-normal text-gray-500">Anything
-                                you want for your credentials
-                            </p>
-                        </div>
-                        </div>
-                        </div>
+                        <li
+                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center">
+                                <div
+                                    class="flex items-center gap-3.5 bg-slate-300 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold">
+                                            20 <br>
+                                            Mei
+                                        </span>
+                                    </div>
+                                    <div class="flex items-start justify-center flex-col" style="align-items: start;">
+                                        <h6 class="text-base font-semibold text-black mb-0.5">
+                                            Final Call
+                                        </h6>
+                                        <p class="text-sm font-normal text-gray-800">
+                                            Batas akhir penerimaan artikel
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span
+                                        class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                                    <span
+                                        class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span>
                         </li>
-                        <li class="relative flex-1 after:content-['']  after:w-0.5 after:h-full  after:bg-gray-300 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                        <div class="flex items-center justify-center gap-8 w-full max-w-sm">
-                        <div class="flex items-center gap-3.5 bg-gray-50 p-3.5 rounded-xl relative z-10 border border-gray-50 w-full">
-                        <div class="rounded-lg bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-600 p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
-                                        stroke="currentColor" stroke-width="1.6"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class=" flex items-start rounded-md justify-center flex-col">
-                            <h6 class="text-base font-semibold text-black mb-0.5">
-                                Account
-                                Info</h6>
-                            <p class="text-xs font-normal text-gray-500">Anything
-                                you want for your credentials
-                            </p>
-                        </div>
-                        </div>
-                        </div>
+                        <li
+                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center">
+                                <div
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold">
+                                            3 <br>
+                                            Juni
+                                        </span>
+                                    </div>
+                                    <div class="flex items-start justify-center flex-col" style="align-items: start;">
+                                        <h6 class="text-base font-semibold text-black mb-0.5">
+                                            Acceptance Notice
+                                        </h6>
+                                        <p class="text-sm font-normal text-gray-800">
+                                            Batas akhir pembayaran biaya registrasi seminar nasional.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
                         </li>
-                        <li class="relative flex-1 after:content-['']  after:w-0.5 after:h-full  after:bg-gray-300 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                        <div class="flex items-center justify-center gap-8 w-full max-w-sm">
-                        <div class="flex items-center gap-3.5 bg-gray-50 p-3.5 rounded-xl relative z-10 border border-gray-50 w-full">
-                        <div class="rounded-lg bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-600 p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
-                                        stroke="currentColor" stroke-width="1.6"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class=" flex items-start rounded-md justify-center flex-col">
-                            <h6 class="text-base font-semibold text-black mb-0.5">
-                                Account
-                                Info</h6>
-                            <p class="text-xs font-normal text-gray-500">Anything
-                                you want for your credentials
-                            </p>
-                        </div>
-                        </div>
-                        </div>
+                        <li
+                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center">
+                                <div
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold">
+                                            10 <br>
+                                            Juni
+                                        </span>
+                                    </div>
+                                    <div class="flex items-start justify-center flex-col " style="align-items: start;">
+                                        <h6 class="text-base font-semibold text-black mb-0.5">
+                                            Deadline Registration
+                                        </h6>
+                                        <p class="text-sm font-normal text-gray-800">
+                                            Batas akhir pembayaran biaya registrasi seminar nasional.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
                         </li>
-                        <li class="relative flex-1 ">
-                        <div class="flex items-center justify-center gap-8 w-full max-w-sm">
-                        <div class="flex items-center gap-3.5 bg-gray-50 p-3.5 rounded-xl relative z-10 border border-gray-50 w-full">
-                        <div class="rounded-lg bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-600 p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M15.9998 7C15.9998 9.20914 14.2089 11 11.9998 11C9.79067 11 7.99981 9.20914 7.99981 7C7.99981 4.79086 9.79067 3 11.9998 3C14.2089 3 15.9998 4.79086 15.9998 7Z"
-                                        stroke="currentColor" stroke-width="1.6" />
-                                    <path
-                                        d="M11.9998 14C9.15153 14 6.65091 15.3024 5.23341 17.2638C4.48341 18.3016 4.10841 18.8204 4.6654 19.9102C5.2224 21 6.1482 21 7.99981 21H15.9998C17.8514 21 18.7772 21 19.3342 19.9102C19.8912 18.8204 19.5162 18.3016 18.7662 17.2638C17.3487 15.3024 14.8481 14 11.9998 14Z"
-                                        stroke="currentColor" stroke-width="1.6" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class=" flex items-start rounded-md justify-center flex-col ">
-                            <h6 class="text-base font-semibold text-black mb-0.5">
-                                Confirmation</h6>
-                            <p class="text-xs font-normal text-gray-500">Finish It !
-                            </p>
-                        </div>
-                        </div>
-                        </div>
+                        <li class="relative flex-1">
+                            <div class="flex items-center justify-center">
+                                <div
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
+                                        <span class="text-lg text-black text-center font-semibold">
+                                            20 <br>
+                                            Juni
+                                        </span>
+                                    </div>
+                                    <div class="flex items-start justify-center flex-col" style="align-items: start;">
+                                        <h6 class="text-base font-semibold text-black mb-0.5">
+                                            Pelaksanaan SEMNASTEK-UNSUR 2023
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
+                                    <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
+                                </div>
+                            </div>
                         </li>
                     </ol>
                 </div>
             </div>
         </section>
+        <!-- co-host -->
+        <section class="bg-slate-200 dark:bg-gray-700" id="narasumber">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    Co-Host / Sponsorship
+                </div>
+                <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
+                    <!-- umum -->
+                    <div
+                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                        <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Umum</h5>
+                        <div class="flex items-baseline text-gray-900 dark:text-white">
+                            <span class="text-2xl font-bold">Rp. </span>
+                            <span class="text-2xl font-bold tracking-tight">5.000.000,-</span>
+                        </div>
+                        <ul role="list" class="space-y-5 my-7">
+                            <li class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Free
+                                    biaya registrasi untuk 10 artikel</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Logo
+                                    dari institusi akan dipasang di media promosi dan pelaksanaan seminar</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Nama
+                                    dari institusi akan disebutkan oleh MC selama seminar</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Sertifikat
+                                    Co-Host</span>
+                            </li>
+
+                        </ul>
+                        <a href="#"
+                            class="relative w-full inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 rounded-lg bg-gray-100 dark:bg-slate-500 hover:bg-gray-300 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Gabung Sekarang!
+                            <span
+                                class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                        </a>
+                    </div>
+                    <!-- end umum -->
+                    <!-- Sponsorship -->
+                    <div
+                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                        <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Sponsorship</h5>
+                        <div class="flex items-baseline text-gray-900 dark:text-white">
+                            <span class="text-2xl font-bold">Rp. </span>
+                            <span class="text-2xl font-bold tracking-tight">1.000.000,-</span>
+                        </div>
+                        <ul role="list" class="space-y-5 my-7">
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Logo
+                                    dari institusi akan dipasang di media promosi dan pelaksanaan seminar</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Nama
+                                    dari institusi akan disebutkan oleh MC selama seminar</span>
+                            </li>
+                            <li class="flex line-through decoration-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sertifikat</span>
+                            </li>
+                            <li class="flex line-through decoration-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Free biaya
+                                    registrasi untuk 10 artikel</span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="relative w-full inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 rounded-lg bg-gray-100 dark:bg-slate-500 hover:bg-gray-300 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Gabung Sekarang!
+                            <span
+                                class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                        </a>
+                    </div>
+                    <!-- end sponsorship -->
+                </div>
+            </div>
+        </section>
+        <!-- Registrasi -->
+        <section class="bg-white dark:bg-gray-900" id="narasumber">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    Biaya Registrasi
+                </div>
+                <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
+                    <!-- author -->
+                    <div
+                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                        <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Author</h5>
+                        <div class="flex items-baseline text-gray-900 dark:text-white">
+                            <span class="text-2xl font-bold">Rp. </span>
+                            <span class="text-2xl font-bold tracking-tight">350.000,-</span>
+                            <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/orang</span>
+                        </div>
+                        <ul role="list" class="space-y-5 my-7">
+                            <li class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Sertifikat
+                                    Digital</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Materi
+                                    Presentasi</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Presentasi
+                                    Artikel</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Coffee
+                                    Break dan Makan Siang</span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="relative w-full inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 rounded-lg bg-gray-100 dark:bg-slate-500 hover:bg-gray-300 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Gabung Sekarang!
+                            <span
+                                class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                        </a>
+                    </div>
+                    <!-- end author -->
+                    <!-- Sponsorship -->
+                    <div
+                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                        <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Sponsorship</h5>
+                        <div class="flex items-baseline text-gray-900 dark:text-white">
+                            <span class="text-2xl font-bold">Rp. </span>
+                            <span class="text-2xl font-bold tracking-tight">280.000,-</span>
+                            <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/orang</span>
+                        </div>
+                        <ul role="list" class="space-y-5 my-7">
+                            <li class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Sertifikat
+                                    Digital</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Materi
+                                    Presentasi</span>
+                            </li>
+                            <li class="flex">
+                                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span
+                                    class="text-base font-normal leading-tight text-gray-500 dark:text-gray-100 ms-3">Coffee
+                                    Break dan Makan Siang</span>
+                            </li>
+                            <li class="flex line-through decoration-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Presentasi
+                                    Artikel</span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="relative w-full inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 rounded-lg bg-gray-100 dark:bg-slate-500 hover:bg-gray-300 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Gabung Sekarang!
+                            <span
+                                class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                            <span
+                                class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                        </a>
+                    </div>
+                    <!-- end sponsorship -->
+                </div>
+            </div>
+        </section>
+        <!-- Narahubung -->
+        <section class="bg-white dark:bg-gray-900" id="narasumber">
+            <div
+                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    Narahubung
+                </div>
+
+                <div class="flex flex-col lg:flex-row pt-6 gap-16">
+                    <!-- Card -->
+                    <div
+                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg flex flex-col">
+                        <div class="">
+                            <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
+                                Kontak
+                            </div>
+                            <div class="mt-5 text-slate-900 dark:text-gray-50">
+                                <p>
+                                    <span class="mb-4 font-semibold text-gray-900 dark:text-gray-200">
+                                        Anjani, ST.
+                                    </span>
+                                    : +62-87847491053
+                                </p>
+                                <p>
+                                    <span class="mb-4 font-semibold text-gray-900 dark:text-gray-200">
+                                        Annisa Ayu Utami, ST.
+                                    </span>
+                                    : +62-85721818109
+                                </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div
+                                class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50 mt-4 md:mt-16">
+                                Sekretariat
+                            </div>
+                            <div class="mt-2 md:mt-5 text-slate-900 dark:text-gray-50">
+                                <p>Gedung Fakultas Teknik Universitas Suryakancana - Jl. Pasirgede Raya, Bojongherang,
+                                    Kec. Cianjur, Kabupaten Cianjur, Jawa Barat </p>
+                                <p>43216</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row gap-0 md:gap-4 justify-center text-md text-slate-900 dark:text-gray-50 mt-3 md:mt-16">
+                            <a class="flex flex-row items-center gap-1" href="https://www.instagram.com/ft.unsur"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+                                    viewBox="0 0 48 48">
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035"
+                                        r="44.899" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#fd5"></stop>
+                                        <stop offset=".328" stop-color="#ff543f"></stop>
+                                        <stop offset=".348" stop-color="#fc5245"></stop>
+                                        <stop offset=".504" stop-color="#e64771"></stop>
+                                        <stop offset=".643" stop-color="#d53e91"></stop>
+                                        <stop offset=".761" stop-color="#cc39a4"></stop>
+                                        <stop offset=".841" stop-color="#c837ab"></stop>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
+                                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                                    </path>
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54"
+                                        r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#4168c9"></stop>
+                                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
+                                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                                    </path>
+                                    <path fill="#fff"
+                                        d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z">
+                                    </path>
+                                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                                    <path fill="#fff"
+                                        d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z">
+                                    </path>
+                                </svg>
+                                <p>Instagram</p>
+                            </a>
+                            <a class="flex flex-row items-center gap-1" href="mailto:semnastek@unsur.ac.id"
+                                target="_blank">
+                                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/new-post.png"
+                                    alt="new-post" />
+                                <p>semnastek@unsur.ac.id</p>
+                            </a>
+                            <a class="flex flex-row items-center gap-1" href="https://ft.unsur.ac.id/" target="_blank">
+                                <img width="25" height="25" src="https://img.icons8.com/ios/50/internet--v1.png"
+                                    alt="internet--v1" />
+                                <p>ft.unsur.ac.id</p>
+                            </a>
+                        </div>
+                        <!-- Border Sudut -->
+                        <span
+                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span
+                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                    </div>
+                    <!-- end card -->
+                    <!-- Card -->
+                    <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                        <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
+                            Tempat dan Waktu Kegiatan SEMNASTEK-UNSUR
+                        </div>
+                        <div class="mt-5 text-slate-900 dark:text-gray-50">
+                            <p>Kegiatan ini dilaksanakan pada <span
+                                    class="mb-4 font-semibold text-gray-900 dark:text-gray-200"> 20 Juni 2025 </span>
+                                bertempat di Hotel Palace, Cipanas-Cianjur.</p>
+                        </div>
+                        <div class="mt-5 text-slate-900 dark:text-gray-50">
+                            <div class="relative w-full h-64">
+                                <iframe class="absolute top-0 left-0 w-full h-full"
+                                    src="https://www.google.com/maps/embed/v1/place?q=Palace+Hotel+Cipanas,+Jalan+Raya+Cipanas,+Cipanas,+Kabupaten+Cianjur,+Jawa+Barat,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                                    tabindex="0">
+                                </iframe>
+                            </div>
+                        </div>
+                        <!-- Border Sudut -->
+                        <span
+                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span
+                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+        </section>
+        <!-- Template -->
+        <section class="bg-slate-200 dark:bg-gray-700 flex flex-col min-h-screen" id="template">
+            <div class="flex-grow flex flex-col items-center justify-center max-w-5xl px-4 mx-auto">
+                <div
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    Template Artikel
+                </div>
+                <div class="text-md md:text-lg lg:text-xl font-medium text-black dark:text-white text-justify mt-8">
+                    Template penulisan artikel dapat diunduh pada tombol dibawah ini!
+                </div>
+                <a href="#" class="relative w-fit items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 rounded-lg bg-gray-300 dark:bg-slate-500 hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 mt-6">
+                    Unduh Template
+                    <span
+                        class="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-black dark:border-gray-400"></span>
+                    <span
+                        class="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-black dark:border-gray-400"></span>
+                </a>
+                <div class="text-md md:text-lg lg:text-xl font-medium text-black dark:text-white text-center mt-8">
+                    Keseluruhan artikel akan diterbitkan di prosiding Online yang terindeks Google Scholar. <br>
+                    Artikel terpilih akan memiliki kesempatan untuk diterbitkan di Jurnal yang terindeks SINTA <br>
+                    (Prodi Industri SINTA 3, Prodi Informatika SINTA 5, Prodi Sipil SINTA 6)
+                </div>
+            </div>
+            <footer class="bg-gray-800 text-white w-screen py-4 text-center h-48 justify-between">
+                <div class="flex flex-row justify-center items-center gap-4">
+                    <div><img width="80px" height="80px" src="../assets/images/unsur_logo.png" alt="logo-unsur"></div>
+                    <div><img width="80px" height="80px" src="https://semnastek.unsur.ac.id/img/ft_logo.png" alt="logo-teknik"></div>
+                    <div><img width="80px" height="80px" src="https://semnastek.unsur.ac.id/img/stmik_im.png" alt="logo-stmik"></div>
+                    <div><img width="80px" height="80px" src="https://semnastek.unsur.ac.id/img/km_logo.png" alt="logo-mbkm"></div>
+                </div>
+                <p class="text-sm mt-6">© 2024 Universitas Suryakancana. All rights reserved.</p>
+            </footer>
+        </section>        
     </main>
     <script src="../node_modules/preline/dist/preline.js"></script>
     <script>
