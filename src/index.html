@@ -40,7 +40,18 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        /* SVG berada di belakang */
+        #narasumber img {
+            z-index: 0;
+            position: absolute;
+            pointer-events: none; /* Tidak mengganggu interaksi */
+        }
 
+        /* Konten section berada di atas */
+        #narasumber .relative.z-10 {
+            z-index: 10;
+            position: relative;
+        }
         @media (max-width: 1024px) {
             main {
                 scroll-snap-type: none;
@@ -55,6 +66,49 @@
                 align-items: center;
             }
         }
+        /* card animation */
+        .card {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            transform: scale(0.1);
+            transform-origin: top left;
+            transition: all 0.7s ease-out;
+        }
+
+        .card.in-view {
+            width: auto;
+            height: auto;
+            opacity: 1;
+            transform: scale(1);
+            animation: scaleIn 0.7s ease-out forwards;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .card.out-of-view {
+            opacity: 0;
+            transform: scale(0.1);
+        }
+        /* text animation in */
+        .swipe-text {
+            opacity: 0;
+            transform: translateY(-50%);
+            transition: all 0.8s ease-in-out;
+        }
+        .swipe-text.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
@@ -194,10 +248,10 @@
         <section class="bg-slate-200 dark:bg-gray-700" id="tentang">
             <div class="flex flex-col min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
                 <div
-                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    class="swipe-text max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     SEMNASTEK-UNSUR
                 </div>
-                <div class="text-sm md:text-md lg:text-lg font-medium text-black dark:text-white text-justify mt-8">
+                <div class="swipe-text text-sm md:text-md lg:text-lg font-medium text-black dark:text-white text-justify mt-8">
                     Seminar Nasional Teknik merupakan program tahunan dari Fakultas Teknik,
                     Universitas Suryakancana yang ditujukan untuk mengumpulkan para akademisi,
                     peneliti, maupun praktisi dalam forum ilmiah yang akan mempresentasikan hasil penelitian dalam
@@ -223,17 +277,21 @@
             </div>
         </section>
         <!-- Lingkup -->
-        <section class="bg-white dark:bg-gray-900" id="lingkup">
+        <section class="bg-white dark:bg-gray-900 relative" id="lingkup">
+            <!-- SVG Backgrounds -->
+            <img src="../assets/images/undraw_code-review_ept3.svg" alt="Decorative Top Left" 
+                 class="absolute top-0 left-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
+            <img src="../assets/images/undraw_qa-engineers_kgp8.svg" alt="Decorative Bottom Right" 
+                 class="absolute top-32 right-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
             <div
                 class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
                 <div
-                    class="max-w-2xl text-lg font-bold tracking-tight leading-none md:text-2xl xl:text-4xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    class="max-w-2xl text-lg font-bold tracking-tight leading-none md:text-2xl xl:text-4xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2 z-10">
                     Lingkup
                 </div>
                 <div class="flex flex-col lg:flex-row pt-6 gap-16">
                     <!-- Card -->
-                    <div
-                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div class="card relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Informatika
                         </div>
@@ -251,14 +309,11 @@
                             <p>Human Computer Interaction</p>
                         </div>
                         <!-- Border Sudut -->
-                        <span
-                            class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
-                        <span
-                            class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
-                    </div>
+                        <span class="absolute top-[-6px] left-[-6px] h-4 w-4 border-t-4 border-l-4 border-gray-400 dark:border-gray-300"></span>
+                        <span class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
+                    </div>                    
                     <!-- Card -->
-                    <div
-                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div class="card relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Industri
                         </div>
@@ -276,8 +331,7 @@
                             class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
                     </div>
                     <!-- Card -->
-                    <div
-                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div class="card relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Teknik Sipil
                         </div>
@@ -299,17 +353,22 @@
             </div>
         </section>
         <!-- Narasumber -->
-        <section class="bg-slate-200 dark:bg-gray-700" id="narasumber">
-            <div
-                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
-                <div
-                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+        <section class="bg-slate-200 dark:bg-gray-700 relative" id="narasumber">
+            <!-- SVG Backgrounds -->
+            <img src="../assets/images/undraw_educator_6dgp.svg" alt="Decorative Top Left" 
+                 class="absolute top-0 left-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
+            <img src="../assets/images/undraw_sharing-knowledge_pu0e.svg" alt="Decorative Bottom Right" 
+                 class="absolute bottom-0 right-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
+        
+            <!-- Content Wrapper -->
+            <div class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center relative z-10">
+                <div class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
                     Narasumber
                 </div>
-                <div class="mt-8 flex flex-col lg:flex-row gap-16">
+                <div class="mt-8 flex flex-col lg:flex-row gap-16 z-1">
                     <!-- Profile Card 1 -->
                     <div class="min-h-96 min-w-72">
-                        <div class="bg-white shadow-xl rounded-lg p-6">
+                        <div class="bg-white shadow-xl rounded-lg p-6 card">
                             <div class="photo-wrapper relative p-2">
                                 <!-- Wrapper untuk border -->
                                 <div class="absolute inset-0 flex justify-center items-center">
@@ -318,7 +377,7 @@
                                 </div>
                                 <!-- Image -->
                                 <img class="w-48 h-48 rounded-full mx-auto relative z-10"
-                                    src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
+                                    src="https://i.pravatar.cc/300"
                                     alt="John Doe">
                             </div>
                             <div class="p-2">
@@ -331,7 +390,7 @@
                     </div>
                     <!-- Profile Card 2 -->
                     <div class="min-h-96 min-w-72">
-                        <div class="bg-white shadow-xl rounded-lg p-6">
+                        <div class="bg-white shadow-xl rounded-lg p-6 card">
                             <div class="photo-wrapper relative p-2">
                                 <!-- Wrapper untuk border -->
                                 <div class="absolute inset-0 flex justify-center items-center">
@@ -340,7 +399,7 @@
                                 </div>
                                 <!-- Image -->
                                 <img class="w-48 h-48 rounded-full mx-auto relative z-10"
-                                    src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
+                                    src="https://i.pravatar.cc/300"
                                     alt="John Doe">
                             </div>
                             <div class="p-2">
@@ -353,7 +412,7 @@
                     </div>
                     <!-- Profile Card 3 -->
                     <div class="min-h-96 min-w-72">
-                        <div class="bg-white shadow-xl rounded-lg p-6">
+                        <div class="bg-white shadow-xl rounded-lg p-6 card">
                             <div class="photo-wrapper relative p-2">
                                 <!-- Wrapper untuk border -->
                                 <div class="absolute inset-0 flex justify-center items-center">
@@ -362,7 +421,7 @@
                                 </div>
                                 <!-- Image -->
                                 <img class="w-48 h-48 rounded-full mx-auto relative z-10"
-                                    src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
+                                    src="https://i.pravatar.cc/300"
                                     alt="John Doe">
                             </div>
                             <div class="p-2">
@@ -387,19 +446,19 @@
                 </div>
                 <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
                     <!-- steps -->
-                    <ol class="space-y-8">
+                    <ol class="space-y-4 flex flex-col justify-between h-full w-full">
                         <li
-                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex">
+                            class="swipe-text relative flex-1 after:content-[''] after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex h-full">
                                 <div
-                                    class="flex gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
-                                    <div class="relative flex m-2 p-1 w-12">
+                                    class="flex gap-2 bg-slate-500 p-1.5 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
+                                    <div class="relative flex m-1 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold line-through">
                                             31 <br>
                                             Maret
                                         </span>
                                     </div>
-                                    <div class="flex justify-center flex-col line-through" style="align-items: start;">
+                                    <div class="flex justify-center flex-col line-through">
                                         <h6 class="text-base font-semibold text-black mb-0.5">
                                             Deadline Submission
                                         </h6>
@@ -408,15 +467,13 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div>
-                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
+                            </div>
                         </li>
                         <li
-                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center">
+                            class="swipe-text relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    class="flex items-center gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold line-through">
                                             30 <br>
@@ -433,15 +490,13 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div>
-                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
+                            </div>
                         </li>
                         <li
-                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center">
+                            class="swipe-text relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-slate-300 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    class="flex items-center gap-3.5 bg-slate-300 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold">
                                             20 <br>
@@ -456,18 +511,19 @@
                                             Batas akhir penerimaan artikel
                                         </p>
                                     </div>
-                                </div>
-                                <div>
+                                    
                                     <span
                                         class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
                                     <span
                                         class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span>
+                                </div>
+                            </div>
                         </li>
                         <li
-                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center">
+                            class="swipe-text relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold">
                                             3 <br>
@@ -483,15 +539,13 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div>
-                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
+                            </div>
                         </li>
                         <li
-                            class="relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center">
+                            class="swipe-text relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex items-center justify-center h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold">
                                             10 <br>
@@ -507,14 +561,12 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div>
-                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                            <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
+                            </div>
                         </li>
-                        <li class="relative flex-1">
-                            <div class="flex items-center justify-center">
+                        <li class="swipe-text relative flex-1">
+                            <div class="flex items-center justify-center h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full">
+                                    class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
                                         <span class="text-lg text-black text-center font-semibold">
                                             20 <br>
@@ -526,10 +578,6 @@
                                             Pelaksanaan SEMNASTEK-UNSUR 2023
                                         </h6>
                                     </div>
-                                </div>
-                                <div>
-                                    <!-- <span class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
-                                    <span class="absolute bottom-[-8px] right-[-8px] h-4 w-4 border-b-4 border-r-4 border-gray-500 dark:border-gray-100"></span> -->
                                 </div>
                             </div>
                         </li>
@@ -981,6 +1029,57 @@
                 });
             });
         });
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                let delay = 0;
+
+                entries.forEach((entry, index) => {
+                    const card = entry.target;
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            card.classList.remove("out-of-view");
+                            card.classList.add("in-view");
+                        }, delay);
+                        delay += 750;
+                    } else {
+                        card.classList.remove("in-view");
+                        card.classList.add("out-of-view");
+                    }
+                });
+            }, {
+                threshold: 0.2,
+            });
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                let delay = 0;
+
+                entries.forEach((entry) => {
+                    const text = entry.target;
+
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            text.classList.add("in-view");
+                        }, delay);
+                        delay += 750;
+                    } else {
+                        text.classList.remove("in-view");
+                    }
+                });
+            }, {
+                threshold: 0.2,
+            });
+
+            const swipeTexts = document.querySelectorAll(".swipe-text");
+            swipeTexts.forEach((text) => {
+                observer.observe(text);
+            });
+        });
+
     </script>
 </body>
 
