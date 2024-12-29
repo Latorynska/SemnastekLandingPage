@@ -1894,6 +1894,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .delay-0 {
   transition-delay: 0s;
 }
@@ -2108,6 +2114,14 @@ video {
 }
 
 .dark .hs-dark-mode-active\:hidden {
+  display: none;
+}
+
+.dark\:block:is(.dark *) {
+  display: block;
+}
+
+.dark\:hidden:is(.dark *) {
   display: none;
 }
 
