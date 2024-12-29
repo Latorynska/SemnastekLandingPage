@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../src/output.css" rel="stylesheet">
     <style>
+        :root {
+            --header-height: auto;
+        }
+
+        header {
+            height: var(--header-height);
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -32,7 +40,7 @@
         }
 
         section {
-            height: 100vh;
+            height: calc(100vh - var(--header-height));
             scroll-snap-align: start;
             display: flex;
             justify-content: center;
@@ -40,18 +48,85 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        /* SVG berada di belakang */
+
         #narasumber img {
             z-index: 0;
             position: absolute;
-            pointer-events: none; /* Tidak mengganggu interaksi */
+            pointer-events: none;
         }
 
-        /* Konten section berada di atas */
         #narasumber .relative.z-10 {
             z-index: 10;
             position: relative;
         }
+
+        #tentang, #tanggal-penting, #registrasi {
+            position: relative;
+            color: black;
+        }
+
+        #tentang::before, #tanggal-penting::before, #registrasi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2vh;
+            background: repeating-linear-gradient(
+                to right,
+                transparent 0,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 32px
+            );
+            transform: skewX(-25deg);
+            z-index: 10;
+            pointer-events: none;
+
+            /* Animasi */
+            animation: move-left 2s linear infinite;
+        }
+
+        #tentang::after, #tanggal-penting::after, #registrasi::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2vh;
+            background: repeating-linear-gradient(
+                to right,
+                transparent 0,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 32px
+            );
+            transform: skewX(-25deg);
+            z-index: 10;
+            pointer-events: none;
+
+            /* Animasi */
+            animation: move-right 2s linear infinite;
+        }
+
+        @keyframes move-left {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -64px 0;
+            }
+        }
+
+        @keyframes move-right {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 64px 0;
+            }
+        }
+        
         @media (max-width: 1024px) {
             main {
                 scroll-snap-type: none;
@@ -68,8 +143,6 @@
         }
         /* card animation */
         .card {
-            width: 0;
-            height: 0;
             opacity: 0;
             transform: scale(0.1);
             transform-origin: top left;
@@ -77,8 +150,6 @@
         }
 
         .card.in-view {
-            width: auto;
-            height: auto;
             opacity: 1;
             transform: scale(1);
             animation: scaleIn 0.7s ease-out forwards;
@@ -114,7 +185,7 @@
 
 <body class="font-sans">
     <header
-        class="sticky top-0 z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full bg-white text-lg py-3 dark:bg-neutral-800 shadow-md dark:shadow-gray-400">
+        class="sticky top-0 z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full bg-white text-lg py-3 dark:bg-neutral-800 shadow-md dark:shadow-gray-400" id="header">
         <nav class="max-w-[85rem] w-full mx-auto px-4 lg:flex lg:items-center lg:justify-between">
             <div class="flex items-center justify-between">
                 <a class="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#"
@@ -282,7 +353,7 @@
             <img src="../assets/images/undraw_code-review_ept3.svg" alt="Decorative Top Left" 
                  class="absolute top-0 left-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
             <img src="../assets/images/undraw_qa-engineers_kgp8.svg" alt="Decorative Bottom Right" 
-                 class="absolute top-32 right-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
+                 class="absolute bottom-0 right-0 w-[50vh] h-[50vh] opacity-85 pointer-events-none z-0">
             <div
                 class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
                 <div
@@ -437,45 +508,46 @@
             </div>
         </section>
         <!-- Tanggal Penting -->
-        <section class="bg-white dark:bg-gray-900" id="tanggal-penting">
-            <div
-                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
+        <section class="bg-white dark:bg-gray-900 relative" id="tanggal-penting">
+            <div class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center">
                 <div
-                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2 z-10">
                     Tanggal Penting
                 </div>
-                <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
+                <img src="../assets/images/undraw_online-calendar_zaoc.svg" alt="Decorative Top Left" 
+                    class="md:absolute top-32 right-0 w-[100vh] opacity-85 pointer-events-none z-0">
+                <div class="mt-2 flex flex-col lg:flex-row gap-16 pb-10">
                     <!-- steps -->
                     <ol class="space-y-4 flex flex-col justify-between h-full w-full">
-                        <li
-                            class="swipe-text relative flex-1 after:content-[''] after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                        <li class="swipe-text relative flex-1 after:content-[''] after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
                             <div class="flex h-full">
                                 <div
                                     class="flex gap-2 bg-slate-500 p-1.5 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex m-1 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold line-through">
-                                            31 <br>
-                                            Maret
+                                        <span class="text-md text-black text-center font-semibold line-through">
+                                            30 <br>
+                                            April
                                         </span>
                                     </div>
-                                    <div class="flex justify-center flex-col line-through">
+                                    <div class="flex items-start justify-center flex-col line-through"
+                                        style="align-items: start;">
                                         <h6 class="text-base font-semibold text-black mb-0.5">
-                                            Deadline Submission
+                                            Extended Deadline Submission
                                         </h6>
                                         <p class="text-sm font-normal text-gray-800">
-                                            Batas akhir pengiriman artikel..
+                                            Penambahan batas akhir pengiriman artikel.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li
-                            class="swipe-text relative flex-1 after:content-['']  after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
-                            <div class="flex items-center justify-center h-full">
+                            class="swipe-text relative flex-1 after:content-[''] after:w-0.5 after:h-full after:bg-gray-900 after:inline-block after:absolute after:-bottom-11 after:left-1/2">
+                            <div class="flex h-full">
                                 <div
-                                    class="flex items-center gap-3.5 bg-slate-500 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
-                                    <div class="relative flex items-center justify-center m-2 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold line-through">
+                                    class="flex gap-2 bg-slate-500 p-1.5 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
+                                    <div class="relative flex m-1 p-1 w-12">
+                                        <span class="text-md text-black text-center font-semibold line-through">
                                             30 <br>
                                             April
                                         </span>
@@ -498,7 +570,7 @@
                                 <div
                                     class="flex items-center gap-3.5 bg-slate-300 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold">
+                                        <span class="text-md text-black text-center font-semibold">
                                             20 <br>
                                             Mei
                                         </span>
@@ -511,7 +583,6 @@
                                             Batas akhir penerimaan artikel
                                         </p>
                                     </div>
-                                    
                                     <span
                                         class="absolute top-[-8px] left-[-8px] h-4 w-4 border-t-4 border-l-4 border-gray-700 dark:border-gray-300"></span>
                                     <span
@@ -525,7 +596,7 @@
                                 <div
                                     class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold">
+                                        <span class="text-md text-black text-center font-semibold">
                                             3 <br>
                                             Juni
                                         </span>
@@ -547,7 +618,7 @@
                                 <div
                                     class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold">
+                                        <span class="text-md text-black text-center font-semibold">
                                             10 <br>
                                             Juni
                                         </span>
@@ -568,7 +639,7 @@
                                 <div
                                     class="flex items-center gap-3.5 bg-gray-100 p-2 rounded-tr-lg rounded-bl-lg relative z-10 w-full h-full">
                                     <div class="relative flex items-center justify-center m-2 p-1 w-12">
-                                        <span class="text-lg text-black text-center font-semibold">
+                                        <span class="text-md text-black text-center font-semibold">
                                             20 <br>
                                             Juni
                                         </span>
@@ -586,7 +657,7 @@
             </div>
         </section>
         <!-- co-host -->
-        <section class="bg-slate-200 dark:bg-gray-700" id="narasumber">
+        <section class="bg-slate-200 dark:bg-gray-700" id="co-host">
             <div
                 class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
                 <div
@@ -595,8 +666,7 @@
                 </div>
                 <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
                     <!-- umum -->
-                    <div
-                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="swipe-text w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                         <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Umum</h5>
                         <div class="flex items-baseline text-gray-900 dark:text-white">
                             <span class="text-2xl font-bold">Rp. </span>
@@ -656,8 +726,7 @@
                     </div>
                     <!-- end umum -->
                     <!-- Sponsorship -->
-                    <div
-                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="swipe-text w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                         <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Sponsorship</h5>
                         <div class="flex items-baseline text-gray-900 dark:text-white">
                             <span class="text-2xl font-bold">Rp. </span>
@@ -716,7 +785,7 @@
             </div>
         </section>
         <!-- Registrasi -->
-        <section class="bg-white dark:bg-gray-900" id="narasumber">
+        <section class="bg-white dark:bg-gray-900" id="registrasi">
             <div
                 class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
                 <div
@@ -725,8 +794,7 @@
                 </div>
                 <div class="mt-8 flex flex-col lg:flex-row gap-16 pb-10">
                     <!-- author -->
-                    <div
-                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="swipe-text w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                         <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Author</h5>
                         <div class="flex items-baseline text-gray-900 dark:text-white">
                             <span class="text-2xl font-bold">Rp. </span>
@@ -786,8 +854,7 @@
                     </div>
                     <!-- end author -->
                     <!-- Sponsorship -->
-                    <div
-                        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="swipe-text w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                         <h5 class="mb-4 text-3xl font-extrabold text-gray-500 dark:text-gray-200">Sponsorship</h5>
                         <div class="flex items-baseline text-gray-900 dark:text-white">
                             <span class="text-2xl font-bold">Rp. </span>
@@ -849,20 +916,18 @@
             </div>
         </section>
         <!-- Narahubung -->
-        <section class="bg-white dark:bg-gray-900" id="narasumber">
-            <div
-                class="flex flex-col min-h-fit md:min-h-screen max-w-5xl px-4 py-8 mx-auto items-center justify-center gap-2">
+        <section class="bg-white dark:bg-gray-900" id="narahubung">
+            <div class="flex flex-col min-h-fit md:min-h-screen px-4 mx-auto items-center justify-center gap-12">
                 <div
-                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 pb-2 px-2">
+                    class="max-w-2xl text-md font-bold tracking-tight leading-none md:text-lg xl:text-2xl text-slate-600 dark:text-slate-100 text-center border-b-4 border-slate-400 dark:border-slate-300 px-2">
                     Narahubung
                 </div>
-
-                <div class="flex flex-col lg:flex-row pt-6 gap-16">
+                <div class="flex flex-col md:flex-row justify-between gap-4">
+                    <img src="../assets/images/undraw_mailbox_e7nc.svg" class="w-full" alt="">
                     <!-- Card -->
-                    <div
-                        class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg flex flex-col">
+                    <div class="card relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 max-h-fit w-full text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg flex flex-col">
                         <div class="">
-                            <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
+                            <div class="text-lg md:text-xl lg:text-xl font-bold text-slate-900 dark:text-gray-50">
                                 Kontak
                             </div>
                             <div class="mt-5 text-slate-900 dark:text-gray-50">
@@ -882,18 +947,17 @@
                         </div>
                         <div class="">
                             <div
-                                class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50 mt-4 md:mt-16">
+                                class="text-lg md:text-xl lg:text-xl font-bold text-slate-900 dark:text-gray-50 mt-4">
                                 Sekretariat
                             </div>
-                            <div class="mt-2 md:mt-5 text-slate-900 dark:text-gray-50">
+                            <div class="md:mt-5 text-slate-900 dark:text-gray-50">
                                 <p>Gedung Fakultas Teknik Universitas Suryakancana - Jl. Pasirgede Raya, Bojongherang,
                                     Kec. Cianjur, Kabupaten Cianjur, Jawa Barat </p>
                                 <p>43216</p>
                             </div>
                         </div>
-                        <div
-                            class="flex flex-col md:flex-row gap-0 md:gap-4 justify-center text-md text-slate-900 dark:text-gray-50 mt-3 md:mt-16">
-                            <a class="flex flex-row items-center gap-1" href="https://www.instagram.com/ft.unsur"
+                        <div class="flex flex-col gap-0 md:gap-4 text-md text-slate-900 dark:text-gray-50 mt-3 md:mt-10">
+                            <a class="flex flex-row items-center justify-center gap-1" href="https://www.instagram.com/ft.unsur"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
                                     viewBox="0 0 48 48">
@@ -929,15 +993,12 @@
                                 </svg>
                                 <p>Instagram</p>
                             </a>
-                            <a class="flex flex-row items-center gap-1" href="mailto:semnastek@unsur.ac.id"
-                                target="_blank">
-                                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/new-post.png"
-                                    alt="new-post" />
+                            <a class="flex flex-row items-center justify-center gap-2" href="mailto:semnastek@unsur.ac.id" target="_blank">
+                                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/new-post.png" alt="new-post" />
                                 <p>semnastek@unsur.ac.id</p>
                             </a>
-                            <a class="flex flex-row items-center gap-1" href="https://ft.unsur.ac.id/" target="_blank">
-                                <img width="25" height="25" src="https://img.icons8.com/ios/50/internet--v1.png"
-                                    alt="internet--v1" />
+                            <a class="flex flex-row items-center justify-center gap-1" href="https://ft.unsur.ac.id/" target="_blank">
+                                <img width="25" height="25" src="https://img.icons8.com/ios/50/internet--v1.png" alt="internet--v1" />
                                 <p>ft.unsur.ac.id</p>
                             </a>
                         </div>
@@ -949,7 +1010,7 @@
                     </div>
                     <!-- end card -->
                     <!-- Card -->
-                    <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 min-h-96 min-w-64 text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
+                    <div class="card relative bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-500 dark:to-slate-700 w-full min-h-fit text-white dark:text-white p-4 pt-8 rounded-tr-lg rounded-bl-lg">
                         <div class="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-gray-50">
                             Tempat dan Waktu Kegiatan SEMNASTEK-UNSUR
                         </div>
@@ -959,7 +1020,7 @@
                                 bertempat di Hotel Palace, Cipanas-Cianjur.</p>
                         </div>
                         <div class="mt-5 text-slate-900 dark:text-gray-50">
-                            <div class="relative w-full h-64">
+                            <div class="relative w-full h-32">
                                 <iframe class="absolute top-0 left-0 w-full h-full"
                                     src="https://www.google.com/maps/embed/v1/place?q=Palace+Hotel+Cipanas,+Jalan+Raya+Cipanas,+Cipanas,+Kabupaten+Cianjur,+Jawa+Barat,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                                     frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
@@ -974,6 +1035,7 @@
                             class="absolute bottom-[-6px] right-[-6px] h-4 w-4 border-b-4 border-r-4 border-gray-400 dark:border-gray-100"></span>
                     </div>
                     <!-- end card -->
+                    <img src="../assets/images/undraw_smartwatch_ypa5.svg" class="w-full" alt="">
                 </div>
             </div>
         </section>
@@ -1040,14 +1102,14 @@
                             card.classList.remove("out-of-view");
                             card.classList.add("in-view");
                         }, delay);
-                        delay += 750;
+                        delay += 300;
                     } else {
                         card.classList.remove("in-view");
                         card.classList.add("out-of-view");
                     }
                 });
             }, {
-                threshold: 0.2,
+                threshold: 0.5,
             });
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -1065,19 +1127,24 @@
                         setTimeout(() => {
                             text.classList.add("in-view");
                         }, delay);
-                        delay += 750;
+                        delay += 350;
                     } else {
                         text.classList.remove("in-view");
                     }
                 });
             }, {
-                threshold: 0.2,
+                threshold: 0.5,
             });
 
             const swipeTexts = document.querySelectorAll(".swipe-text");
             swipeTexts.forEach((text) => {
                 observer.observe(text);
             });
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.getElementById("header");
+            const headerHeight = header.offsetHeight; // Mendapatkan tinggi header
+            document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
         });
 
     </script>
