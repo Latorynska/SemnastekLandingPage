@@ -179,13 +179,57 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            width: 100%;
+            height: 100vh;
+            font-size: 40px;
+            line-height: 1.5;
+            font-family: system-ui,sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            color: #0000;
+            background-color: #fff;
+            -webkit-text-stroke: 1px #000;
+            background:
+                radial-gradient(1.13em at 50% 1.6em,#000 99%,#0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+                radial-gradient(1.13em at 50% -0.8em,#0000 99%,#000 101%) 50% .8em/3.2em 100% repeat-x  text;
+            animation: l9 2s linear infinite;
+        }
+        .loader:before {
+            content: "Loading";
+        }
+        @keyframes l9 {
+        to {background-position: calc(50% + 1.6em) 0,calc(50% + 3.2em) .8em}
+        }
 
+        main, header{
+            display: hidden;
+        }
+        main, header{
+            visibility: hidden;
+        }
     </style>
+    <script>
+        document.onreadystatechange = function() {
+            if (document.readyState !== "complete") {
+                document.querySelector("header").style.visibility = "hidden";
+                document.querySelector("main").style.visibility = "hidden";
+                document.querySelector("#loader").style.visibility = "visible";
+            } else {
+                document.querySelector("#loader").style.display = "none";
+                document.querySelector("header").style.visibility = "visible";
+                document.querySelector("main").style.visibility = "visible";
+            }
+        };
+    </script>
 </head>
-
 <body class="font-sans">
-    <header
-        class="sticky top-0 z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full bg-white text-lg py-3 dark:bg-neutral-800 shadow-md dark:shadow-gray-400" id="header">
+    <div class="loader" id="loader"></div>
+    <header class="sticky top-0 z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full bg-white text-lg py-3 dark:bg-neutral-800 shadow-md dark:shadow-gray-400" id="header">
         <nav class="max-w-[85rem] w-full mx-auto px-4 lg:flex lg:items-center lg:justify-between">
             <div class="flex items-center justify-between">
                 <a class="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#"
